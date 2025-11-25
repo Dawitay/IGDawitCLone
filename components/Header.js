@@ -5,6 +5,8 @@ import Home from '../app/page';
 
 export default function Header() {
   return (
+    <div className='shadow-sm border-b bg-white sticky top-0 z-50'>
+
     <div className="flex items-center justify-between max-w-6xl mx-4 xl:mx-auto">
 
       {/* Left */}
@@ -49,6 +51,7 @@ export default function Header() {
       </div>
 
 
+    </div>
     </div>
   );
 }

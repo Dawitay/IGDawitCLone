@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, PlusCircleIcon } from '@heroicons/react/24/solid';
+import Home from '../app/page';
 
 export default function Header() {
   return (
-    <div className="flex items-center justify-between max-w-6xl">
+    <div className="flex items-center justify-between max-w-6xl mx-4 xl:mx-auto">
 
       {/* Left */}
       <div className="h-24 w-24 relative hidden lg:inline-grid cursor-pointer">
@@ -40,7 +42,12 @@ export default function Header() {
       </div>
 
       {/* Right */}
-      <h1>Right Side</h1>
+      <div className='flex space-x-4 items-center'>
+        <HomeIcon className="hidden md:inline-flex h-10 w-10 cursor-pointer hover:scale-125 transition-transform duration-200 ease-out" />
+        <PlusCircleIcon className="h-10 w-10 cursor-pointer hover:scale-125 transition-transform duration-200 ease-out" />
+        <Image src="https://links.papareact.com/3ke" alt="Profile Pic" width={40} height={40} className="rounded-full ml-4 cursor-pointer" />
+      </div>
+
 
     </div>
   );

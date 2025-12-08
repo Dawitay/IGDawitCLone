@@ -1,5 +1,5 @@
-import NextAuth from "next-auth"
-import GoogleProvider from "next-auth/providers/google"
+import NextAuth from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions = {
   providers: [
@@ -11,9 +11,12 @@ export const authOptions = {
   pages: {
     signIn: "/auth/signin",
   },
-}
+  callbacks: {
+    async redirect({ baseUrl }) {
+      return baseUrl;
+    },
+  },
+};
 
-const handler = NextAuth(authOptions)
-
-// MUST EXPORT THESE! or NextAuth will break
-export { handler as GET, handler as POST }
+const handler = NextAuth(authOptions);
+export { handler as GET, handler as POST };

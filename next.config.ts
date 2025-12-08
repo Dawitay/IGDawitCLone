@@ -2,9 +2,29 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["cdn2.downdetector.com", "upload.wikimedia.org", "links.papareact.com", "i.pravatar.cc"],
-  /* config options here */
-}
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn2.downdetector.com",
+      },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+      },
+      {
+        protocol: "https",
+        hostname: "links.papareact.com",
+      },
+      {
+        protocol: "https",
+        hostname: "i.pravatar.cc",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com", // 👈 REQUIRED for Google login images
+      },
+    ],
+  },
 };
 
 export default nextConfig;

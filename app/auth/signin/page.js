@@ -3,7 +3,7 @@ import { getProviders } from "next-auth/react";
 import SignInClient from "./SignInClient";
 import Header from "../../../components/Header";
 
-export const dynamic = "force-dynamic"; // ⬅ FIXES VERCEL PRERENDER ERROR
+export const dynamic = "force-dynamic";
 
 export default async function SignInPage() {
   const providers = await getProviders();
@@ -21,7 +21,7 @@ export default async function SignInPage() {
 
         <div className="text-center mb-8">
           {providers &&
-            Object.values(providers).map((provider: any) => (
+            Object.values(providers).map((provider) => (
               <div key={provider.id} className="mb-6">
                 <img
                   src="https://img.freepik.com/premium-vector/instagram-vector-logo-icon-social-media-logotype_901408-392.jpg?semt=ais_hybrid&w=740&q=80"
